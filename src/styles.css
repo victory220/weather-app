@@ -1,0 +1,55 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.card {
+  background-color: #596aca;
+  color: white;
+}
+.card-shadow {
+  box-shadow: 5px 5px 8px #495057;
+}
+h1,
+h2 {
+  text-shadow: 5px 5px 6px #495057;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 20px;
+}
+/* h2 {
+  margin-top: 15px;
+} */
+p {
+  text-align: center;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.weather-emoji {
+  font-size: 50px;
+}
+.weather-emoji-card {
+  font-size: 30px;
+}
+#current-temperature {
+  font-size: 35px;
+  padding: 20px 0px 20px 20px;
+}
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -15px;
+}
+.units a {
+  color: white;
+}
+.current-weather {
+  padding: 20px;
+}

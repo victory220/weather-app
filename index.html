@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather forecast</title>
+    <script
+      src="https://kit.fontawesome.com/00ccb4637b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h1>Weather forecast</h1>
+          <div class="row">
+            <div class="col-sm-5 order-2 order-sm-1 text-center">
+              <h2 id="current-city">Kyiv</h2>
+              <p id="current-time">Sunday 14:30</p>
+            </div>
+            <div class="col-sm-7 order-1 order-sm-2 mb-3">
+              <div class="row">
+                <div class="col-9">
+                  <form id="city-form">
+                    <div class="input-group">
+                      <input
+                        id="city-input"
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter a city"
+                        aria-label="Enter a city"
+                        aria-describedby="button-addon2"
+                        autofocus="on"
+                      />
+                      <button
+                        class="btn btn-secondary border-white"
+                        type="submit"
+                        id="button-addon2"
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="button"
+                    class="btn btn-light"
+                    id="current-button"
+                  >
+                    Current
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-5 col-6 text-center current-weather">
+              <!-- <i class="fa-solid fa-cloud-sun weather-emoji"></i> -->
+              <span id="current-temperature">21</span>
+              <span class="units">
+                <!-- <a href="#" id="show-cels">°C</a>/<a href="#" id="show-fahr">°F</a> -->
+                °C
+              </span>
+            </div>
+            <div class="col-sm-7 col-6 current-weather">
+              <ul>
+                <li id="description">Clouds</li>
+                <li id="humidity">Humidity: 50%</li>
+                <li id="wind-speed">Wind: 3 m/s</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Mon</p>
+                  <i class="fa-solid fa-cloud-sun weather-emoji-card"></i>
+                  <p>18°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Tue</p>
+                  <i class="fa-solid fa-sun sun weather-emoji-card"></i>
+                  <p>19°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Wed</p>
+                  <i
+                    class="fa-solid fa-cloud-showers-heavy weather-emoji-card"
+                  ></i>
+                  <p>12°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Thu</p>
+                  <i class="fa-solid fa-cloud-sun-rain weather-emoji-card"></i>
+                  <p>14°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Fri</p>
+                  <i class="fa-solid fa-cloud-sun weather-emoji-card"></i>
+                  <p>18°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2 col-4 mb-2">
+              <div class="card border border-2 border-white card-shadow">
+                <div class="card-body text-center">
+                  <p>Sat</p>
+                  <i class="fa-solid fa-sun weather-emoji-card"></i>
+                  <p>20°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
