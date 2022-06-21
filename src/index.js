@@ -7,24 +7,16 @@ function addZeroToTime(str) {
 }
 
 function showWeather(response) {
-  // console.log(response);
-  let cityName = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let description = response.data.weather[0].main;
-  let humidity = response.data.main.humidity;
-  let wind = Math.round(response.data.wind.speed);
-  // console.log(cityName, temperature, description, humidity, wind);
-
-  let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = cityName;
-  let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = temperature;
-  let currentDescription = document.querySelector("#description");
-  currentDescription.innerHTML = description;
-  let currentHumidity = document.querySelector("#humidity");
-  currentHumidity.innerHTML = `Humidity: ${humidity}%`;
-  let currentWind = document.querySelector("#wind-speed");
-  currentWind.innerHTML = `Wind: ${wind} m/s`;
+  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function getCityWeather(event) {
