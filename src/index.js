@@ -19,13 +19,17 @@ function showWeather(response) {
   );
 }
 
-function getCityWeather(event) {
+function search(city) {
+  let apiKey = "69a8934df3c12df0dc3ffddf1977ee44";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  if (cityInput.value) {
-    let apiKey = "69a8934df3c12df0dc3ffddf1977ee44";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
-    axios.get(apiUrl).then(showWeather);
+  let city = document.querySelector("#city-input").value;
+  if (city) {
+    search(city);
   } else {
     alert("Please type a city");
   }
@@ -64,9 +68,11 @@ currentTime.innerHTML = `${day} ${hours}:${minutes}`;
 // City
 
 let cityForm = document.querySelector("#city-form");
-cityForm.addEventListener("submit", getCityWeather);
+cityForm.addEventListener("submit", handleSubmit);
 
 // Current location
 
 let buttonCurrent = document.querySelector("#current-button");
 buttonCurrent.addEventListener("click", getCurrentLocation);
+
+search("London");
